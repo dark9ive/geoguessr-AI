@@ -47,6 +47,12 @@ Here's one example:
 python ./train.py -b 100 -lr 1e-5 -s 114514 -e 10 -dr 0.3
 ```
 
+### Step 5. Demo
+
+```
+python ./demo.py -m {model_weight_file}
+```
+
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

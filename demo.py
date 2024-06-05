@@ -4,8 +4,14 @@ from PIL import Image
 import torch
 import torch.nn as nn
 from transformers import ViTForImageClassification, ViTFeatureExtractor
+import argparse
 
 app = Flask(__name__)
+
+parser = argparse.ArgumentParser(description="Demo site for image classification.")
+parser.add_argument("--model", "-m", type=str, default="", help="Path to saved model")
+args = parser.parse_args()
+model_file = args.model
 
 # Load the dataset to get class labels
 train_data_path = 'data'
@@ -33,7 +39,7 @@ model.classifier = nn.Sequential(
 model = model.to(device)
 
 # Load model
-model.load_state_dict(torch.load('checkpoint/epoch_35.pth'))
+model.load_state_dict(torch.load(f'{model_file}'))
 model.eval()
 
 # Define image preprocessing pipeline
