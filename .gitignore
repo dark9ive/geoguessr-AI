@@ -3,3 +3,7 @@ data/*/
 .env
 checkpoint/*.pth
 matrix/*.txt
+
+!data/Fetched_Data_In_Here
+!checkpoint/Model_Checkpoints_Will_Be_In_here
+!matrix/Generated_Confusion_Matrix_Will_Be_In_This_Folder

@@ -120,7 +120,7 @@ def main():
 
         if res_img is None:
             continue
-        '''
+        
         svmd = streetview_metadata(latitude, longitude)
 
         if not svmd.fetch():
@@ -139,13 +139,13 @@ def main():
 
         gc_dict = json.loads(gc.result)
         try:
-            mds[res_img.id]["縣/市"] = gc_dict["results"][0]["address_components"][0]["long_name"]
+            mds[res_img.id]["city"] = gc_dict["results"][0]["address_components"][0]["long_name"]
         except:
             os.remove(f"{PIC_FOLDER}/{res_img.name}")
             del mds[res_img.id]
             print(f"{PIC_FOLDER}/{res_img.name} removed")
             continue
-        '''
+
         success_cnt += 1
         t.set_description(f"SuccessRate: {success_cnt}/{N}")
         t.refresh()

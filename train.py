@@ -196,7 +196,7 @@ if __name__ == '__main__':
     parser.add_argument("--start_epoch", "-se", type=int, default=0, help="Number of epoch to start.")
     parser.add_argument("--batch_size", "-b", type=int, default=32, help="Batch size for training.")
     parser.add_argument("--learning_rate", "-lr", type=float, default=1e-5, help="Learning rate for the optimizer.")
-    parser.add_argument("--seed", "-s", type=int, default=114514, help="Batch size for training.")
+    parser.add_argument("--seed", "-s", type=int, default=114514, help="Random seed of train/test split.")
     parser.add_argument("--dropout_rate", "-dr", type=float, default=0.3, help="Dropout rate for training.")
 
     args = parser.parse_args()
